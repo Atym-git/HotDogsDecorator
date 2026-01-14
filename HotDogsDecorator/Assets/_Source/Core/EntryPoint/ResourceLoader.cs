@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ResourceLoader<T>
+public class ResourceLoader/*<T>*/
 {
     public List<HotDogVariantDataSO> LoadVariantsData()
     {
@@ -20,7 +20,7 @@ public class ResourceLoader<T>
         return variants;
     }
     
-    public static bool LoadSODataFromResources<T>(string resourcePath, out List<T> downloadedObjectsList) where T : ScriptableObject
+    /*public static bool LoadSODataFromResources<T>(string resourcePath, out List<T> downloadedObjectsList) where T : ScriptableObject
     {
         downloadedObjectsList = null;
         downloadedObjectsList = Resources.LoadAll<T> (resourcePath)
@@ -31,5 +31,5 @@ public class ResourceLoader<T>
             return true;
         }
         return false;
-    }
+    }*/
 }
