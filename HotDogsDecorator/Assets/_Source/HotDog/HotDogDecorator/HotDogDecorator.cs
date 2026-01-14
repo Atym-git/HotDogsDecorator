@@ -1,6 +1,6 @@
 ﻿namespace _Source.HotDog.HotDogDecorator
 {
-    public class HotDogDecorator : OnionHotDog
+    public class HotDogDecorator : AHotDogDecorator
     {
         private int _cost;
         private string _name;

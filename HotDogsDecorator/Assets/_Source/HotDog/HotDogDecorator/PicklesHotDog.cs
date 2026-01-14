@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PicklesHotDog : AHotDogDecorator
 {
-    public PicklesHotDog(AHotDog hotDog) : base(hotDog, hotDog.GetName(), hotDog.GetCost())
+    public PicklesHotDog(AHotDog hotDog) : base(hotDog)
     {
     }
 
