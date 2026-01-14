@@ -2,8 +2,8 @@ using UnityEngine;
 
 public abstract class AHotDog
 {
-    private string _name;
-    private int _cost;
+    protected string _name;
+    protected int _cost;
 
     public AHotDog(string name, int cost, float weight)
     {

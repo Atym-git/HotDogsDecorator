@@ -2,9 +2,6 @@
 {
     public class HotDogDecorator : AHotDogDecorator
     {
-        private int _cost;
-        private string _name;
-        
         public HotDogDecorator(AHotDog hotDog, string name, int cost, float weight) : base(hotDog)
         {
             _cost = cost;
@@ -12,14 +9,14 @@
             Weight += weight;
         }
 
-        override public int GetCost()
+        public override int GetCost()
         {
             return hotDog.GetCost() +  _cost;
         }
 
         public override string GetName()
         {
-            return base.GetName() + " " + _name;
+            return hotDog.GetName() + " " + _name;
         }
     }
 }
