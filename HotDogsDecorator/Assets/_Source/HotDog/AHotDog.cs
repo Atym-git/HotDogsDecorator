@@ -22,5 +22,4 @@ public abstract class AHotDog
     {
         return _cost;
     }
-    
 }

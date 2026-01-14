@@ -5,6 +5,8 @@ using _Source.HotDog.HotDogDecorator;
 
 public class Bootstrapper : MonoBehaviour
 {
+    const string HOTDOG_DECORATOR_SO_PATH = "SO/HotDogSO/DecoratorSO";
+    const string HOTDOG_VARIANT_SO_PATH = "SO/HotDogSO/HotDogVariantsSO";
     private void Start()
     {
         //Task 1
@@ -23,27 +25,28 @@ public class Bootstrapper : MonoBehaviour
         //Task 2
 
         System.Random rand =  new System.Random();
-        
-        ResourceLoader loader = new ResourceLoader();
 
-        List<HotDogVariantDataSO> hotDogVariantsData = loader.LoadVariantsData();
-        List<HotDogDecoratorDataSO>  hotDogDecoratorsData = loader.LoadDecoratorData();
+        List<HotDogVariantDataSO> hotDogVariantsData = new();
+        List<HotDogDecoratorDataSO> hotDogDecoratorsData = new();
         
-        HotDogVariantDataSO currHotDogVariantData = hotDogVariantsData[rand.Next(0, hotDogVariantsData.Count - 1)];
-        HotDogDecoratorDataSO currHotDogDecoratorData = hotDogDecoratorsData[rand.Next(0, hotDogDecoratorsData.Count - 1)];
+        if (ResourceLoader.LoadSODataFromResources(HOTDOG_VARIANT_SO_PATH, out hotDogVariantsData)
+            && ResourceLoader.LoadSODataFromResources(HOTDOG_DECORATOR_SO_PATH, out hotDogDecoratorsData))
+        {
+            HotDogVariantDataSO currHotDogVariantData = hotDogVariantsData[rand.Next(0, hotDogVariantsData.Count)];
+            HotDogDecoratorDataSO currHotDogDecoratorData = hotDogDecoratorsData[rand.Next(0, hotDogDecoratorsData.Count)];
         
-        HotDogVariant hotDog = new HotDogVariant(currHotDogVariantData.Name,
-            currHotDogVariantData.Cost,
-            currHotDogVariantData.Weight);
+            HotDogVariant hotDog = new HotDogVariant(currHotDogVariantData.Name,
+                currHotDogVariantData.Cost,
+                currHotDogVariantData.Weight);
         
-        Debug.Log($"{hotDog.GetName()} - {hotDog.GetCost()} ({hotDog.Weight}г)");
+            Debug.Log($"{hotDog.GetName()} - {hotDog.GetCost()} ({hotDog.Weight}г)");
+            
+            HotDogDecorator hotDogDecorator = new HotDogDecorator(hotDog,
+                currHotDogDecoratorData.Name,
+                currHotDogDecoratorData.Cost,
+                currHotDogDecoratorData.Weight);
         
-        HotDogDecorator hotDogDecorator = new HotDogDecorator(hotDog,
-            currHotDogDecoratorData.Name,
-            currHotDogDecoratorData.Cost,
-            currHotDogDecoratorData.Weight);
-        
-        Debug.Log($"{hotDogDecorator.GetName()} - {hotDogDecorator.GetCost()} ({hotDogDecorator.Weight}г)");
-
+            Debug.Log($"{hotDogDecorator.GetName()} - {hotDogDecorator.GetCost()} ({hotDogDecorator.Weight}г)");
+        }
     }
 }

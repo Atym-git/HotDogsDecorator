@@ -6,11 +6,6 @@ public class OnionHotDog : AHotDogDecorator
     {
     }
 
-    public override string GetName()
-    {
-        return base.GetName() + " со сладким луком";
-    }
-
     public override int GetCost()
     {
         return base.GetCost() + 15;

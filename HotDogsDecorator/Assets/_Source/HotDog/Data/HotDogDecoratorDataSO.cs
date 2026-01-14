@@ -4,5 +4,4 @@ using UnityEngine;
     menuName = "SO/HotDogDecoratorSO")]
 public class HotDogDecoratorDataSO : HotDogVariantDataSO
 {
-    
 }
