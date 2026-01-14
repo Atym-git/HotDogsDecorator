@@ -1,8 +1,8 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "HotDogData",
-    menuName = "SO/HotDogSO")]
-public class HotDogDataSO : ScriptableObject
+[CreateAssetMenu(fileName = "HotDogVariantData",
+    menuName = "SO/HotDogVariantSO")]
+public class HotDogVariantDataSO : ScriptableObject
 {
     [field:SerializeField]
     public string Name { get; private set; }

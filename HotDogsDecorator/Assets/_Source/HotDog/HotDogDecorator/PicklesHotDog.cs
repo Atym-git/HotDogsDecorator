@@ -8,7 +8,7 @@ public class PicklesHotDog : AHotDogDecorator
 
     public override string GetName()
     {
-        return base.GetName() + " с маринованными огурцами";
+        return base.GetName() + " СЃ РјР°СЂРёРЅРѕРІР°РЅРЅС‹РјРё РѕРіСѓСЂС†Р°РјРё";
     }
 
     public override int GetCost()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CaesarHotDog : AHotDog
 {
-    public CaesarHotDog(string name, int cost) : base("Хот-Дог Цезарь", 452)
+    public CaesarHotDog(string name, int cost) : base("РҐРѕС‚-Р”РѕРі Р¦РµР·Р°СЂСЊ", 452, 35)
     {
     }
 }

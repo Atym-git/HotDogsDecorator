@@ -8,7 +8,7 @@ public class OnionHotDog : AHotDogDecorator
 
     public override string GetName()
     {
-        return base.GetName() + " со сладким луком";
+        return base.GetName() + " СЃРѕ СЃР»Р°РґРєРёРј Р»СѓРєРѕРј";
     }
 
     public override int GetCost()
